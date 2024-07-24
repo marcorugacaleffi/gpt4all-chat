@@ -16,7 +16,7 @@ function sendPrompt() {
     userMessage.textContent = userInput;
     chatMessages.appendChild(userMessage);
 
-    fetch('http://192.168.100.22:4891/chat', {  // Assicurati che l'indirizzo IP e la porta siano corretti
+    fetch('https://localhost:4891/chat', {  // Assicurati che l'indirizzo IP e la porta siano corretti
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
