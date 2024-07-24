@@ -35,4 +35,3 @@ function sendPrompt() {
 
     document.getElementById('user-input').value = '';
 }
-
