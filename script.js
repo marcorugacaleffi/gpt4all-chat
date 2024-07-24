@@ -16,7 +16,7 @@ function sendPrompt() {
     userMessage.textContent = userInput;
     chatMessages.appendChild(userMessage);
 
-    fetch('https://192.168.208.6:4891/chat', {  // Assicurati che l'indirizzo IP e la porta siano corretti
+    fetch('https://192.168.208.6:4891/chat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -31,7 +31,10 @@ function sendPrompt() {
         chatMessages.appendChild(botMessage);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Errore di connessione al server: ' + error.message);
+    });
 
     document.getElementById('user-input').value = '';
 }
